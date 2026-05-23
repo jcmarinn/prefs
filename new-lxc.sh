@@ -15,7 +15,7 @@ SSH_PUBLIC_KEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuEOAPfbRWtA+7mbwLzXLeoMK8
 
 # URL to a raw .zshrc file (e.g. https://raw.githubusercontent.com/<user>/dotfiles/main/zshrc).
 # Leave empty to keep the default .zshrc that oh-my-zsh creates.
-ZSHRC_URL="curl -fsSL https://raw.githubusercontent.com/jcmarinn/prefs/main/zshrc -o /home/jcmarin/.zshrc"
+ZSHRC_URL="curl -fsSL https://raw.githubusercontent.com/jcmarinn/prefs/main/zshrc"
 
 # --- sanity check -----------------------------------------------------------
 if [[ $EUID -ne 0 ]]; then
