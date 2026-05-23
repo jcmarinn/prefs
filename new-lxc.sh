@@ -68,11 +68,11 @@ if [[ -d "$USER_HOME/.oh-my-zsh" ]]; then
   echo ">>> oh-my-zsh already installed for '$USERNAME', skipping."
 else
   echo ">>> Installing oh-my-zsh for '$USERNAME'..."
-  # Run installer AS the user so files land in their home dir.
-  # --unattended skips interactive chsh/zsh-launch; we set the shell below.
-  sudo -u "$USERNAME" -H sh -c \
-    "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
-    "" --unattended
+  # Use `su -` (login shell) rather than `sudo -u` so jcmarin starts cleanly in
+  # their own $HOME. With `sudo -u`, root's CWD (/root) leaks through and the
+  # installer fails on its final `cd` back to the original directory.
+  su - "$USERNAME" -c \
+    'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
 fi
 
 # --- custom .zshrc ----------------------------------------------------------
