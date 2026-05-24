@@ -87,7 +87,6 @@ alias c=clear
 alias l='ls -h'
 alias ll='ls -lh'
 alias vi=vim
-alias nano=nano --rcfile ~.config/nano/nanorc
 alias lh='ls -Ald .?*'
 
 prompt="%{$fg_bold[blue]%}-> "
